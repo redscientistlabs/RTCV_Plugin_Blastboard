@@ -35,6 +35,7 @@ namespace BLASTBOARD.UI
             this.pnButtons = new System.Windows.Forms.Panel();
             this.btnOriginalSize = new System.Windows.Forms.Button();
             this.btnRefreshPlayer = new System.Windows.Forms.Button();
+            this.cbBlastToCorruptCloudLive = new System.Windows.Forms.CheckBox();
             this.pnButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,11 +54,11 @@ namespace BLASTBOARD.UI
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(435, 12);
+            this.btnRefresh.Location = new System.Drawing.Point(378, 20);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(212, 37);
+            this.btnRefresh.Size = new System.Drawing.Size(193, 25);
             this.btnRefresh.TabIndex = 7;
-            this.btnRefresh.Text = "Refresh from Stockpile Manager";
+            this.btnRefresh.Text = "Load from Stockpile Manager";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -70,7 +71,7 @@ namespace BLASTBOARD.UI
             this.pnButtons.Controls.Add(this.btnOriginalSize);
             this.pnButtons.Location = new System.Drawing.Point(12, 58);
             this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(637, 411);
+            this.pnButtons.Size = new System.Drawing.Size(679, 411);
             this.pnButtons.TabIndex = 8;
             this.pnButtons.Tag = "color:dark2";
             // 
@@ -90,20 +91,33 @@ namespace BLASTBOARD.UI
             // 
             this.btnRefreshPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefreshPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshPlayer.Location = new System.Drawing.Point(225, 12);
+            this.btnRefreshPlayer.Location = new System.Drawing.Point(186, 20);
             this.btnRefreshPlayer.Name = "btnRefreshPlayer";
-            this.btnRefreshPlayer.Size = new System.Drawing.Size(199, 37);
+            this.btnRefreshPlayer.Size = new System.Drawing.Size(186, 25);
             this.btnRefreshPlayer.TabIndex = 9;
-            this.btnRefreshPlayer.Text = "Refresh from Stockpile Player";
+            this.btnRefreshPlayer.Text = "Load from Stockpile Player";
             this.btnRefreshPlayer.UseVisualStyleBackColor = true;
             this.btnRefreshPlayer.Click += new System.EventHandler(this.btnRefreshPlayer_Click);
+            // 
+            // cbBlastToCorruptCloudLive
+            // 
+            this.cbBlastToCorruptCloudLive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbBlastToCorruptCloudLive.AutoSize = true;
+            this.cbBlastToCorruptCloudLive.ForeColor = System.Drawing.Color.White;
+            this.cbBlastToCorruptCloudLive.Location = new System.Drawing.Point(581, 19);
+            this.cbBlastToCorruptCloudLive.Name = "cbBlastToCorruptCloudLive";
+            this.cbBlastToCorruptCloudLive.Size = new System.Drawing.Size(110, 30);
+            this.cbBlastToCorruptCloudLive.TabIndex = 10;
+            this.cbBlastToCorruptCloudLive.Text = "Blast to \nCorruptCloud Live";
+            this.cbBlastToCorruptCloudLive.UseVisualStyleBackColor = true;
             // 
             // PluginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(661, 482);
+            this.ClientSize = new System.Drawing.Size(703, 482);
+            this.Controls.Add(this.cbBlastToCorruptCloudLive);
             this.Controls.Add(this.btnRefreshPlayer);
             this.Controls.Add(this.pnButtons);
             this.Controls.Add(this.btnRefresh);
@@ -126,5 +140,6 @@ namespace BLASTBOARD.UI
         private System.Windows.Forms.Panel pnButtons;
         private System.Windows.Forms.Button btnOriginalSize;
         private System.Windows.Forms.Button btnRefreshPlayer;
+        private System.Windows.Forms.CheckBox cbBlastToCorruptCloudLive;
     }
 }

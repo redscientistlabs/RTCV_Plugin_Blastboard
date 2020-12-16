@@ -29,7 +29,7 @@ namespace BLASTBOARD.UI
 
         Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        List<(string, BlastLayer)> loadedBlastLayers = null;
+        List<(string, StashKey)> loadedStashKeys = null;
         Size DefaultSize;
 
         public PluginForm(BLASTBOARD _plugin)
@@ -148,7 +148,7 @@ namespace BLASTBOARD.UI
 
         public void LoadFromStashKeys(List<StashKey> sks)
         {
-            List<(string, BlastLayer)> bls = new List<(string, BlastLayer)>();
+            List<(string, StashKey)> stashkeys = new List<(string, StashKey)>();
 
             foreach (var sk in sks)
             {
@@ -157,11 +157,11 @@ namespace BLASTBOARD.UI
                 if (bl == null || bl.Layer.Count == 0)
                     continue;
 
-                bls.Add((sk.Alias, bl));
+                stashkeys.Add((sk.Alias, sk));
             }
 
 
-            loadedBlastLayers = bls;
+            loadedStashKeys = stashkeys;
 
             RefreshButtons();
         }
@@ -173,9 +173,9 @@ namespace BLASTBOARD.UI
             int ColumnsPerRows = (pnButtons.Size.Width - (pnButtons.Size.Width % DefaultSize.Width)) / DefaultSize.Width;
 
             int Padding = pnButtons.Location.X;
-            for(int i=0; i< loadedBlastLayers.Count; i++)
+            for(int i=0; i< loadedStashKeys.Count; i++)
             {
-                var req = loadedBlastLayers[i];
+                var req = loadedStashKeys[i];
 
                 Button btn = new Button();
                 btn.BackColor = Color.Gainsboro;
@@ -199,10 +199,16 @@ namespace BLASTBOARD.UI
         private void Btn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            BlastLayer bl = btn.Tag as BlastLayer;
+            StashKey sk = btn.Tag as StashKey;
 
-            LocalNetCoreRouter.Route(RTCV.NetCore.Endpoints.CorruptCore, RTCV.NetCore.Commands.Basic.ApplyBlastLayer, new object[] { bl, true, true }, false);
-
+            if (cbBlastToCorruptCloudLive.Checked)
+            {
+                LocalNetCoreRouter.Route("CORRUPTCLOUD_LIVERTC", "SEND_TO_CORRUPTCLOUDLIVE", sk, false);
+            }
+            else
+            {
+                LocalNetCoreRouter.Route(RTCV.NetCore.Endpoints.CorruptCore, RTCV.NetCore.Commands.Basic.ApplyBlastLayer, new object[] { sk.BlastLayer, true, true }, false);
+            }
         }
 
         private void PluginForm_ResizeEnd(object sender, EventArgs e)
