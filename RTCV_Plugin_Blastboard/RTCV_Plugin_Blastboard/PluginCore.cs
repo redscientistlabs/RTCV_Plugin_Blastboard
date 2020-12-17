@@ -106,7 +106,7 @@ namespace BLASTBOARD
 
         public bool StopPlugin()
         {
-            if (BLASTBOARD.CurrentSide == RTCSide.Client && !S.ISNULL<PluginForm>() && !S.GET<PluginForm>().IsDisposed)
+            if (!S.ISNULL<PluginForm>() && !S.GET<PluginForm>().IsDisposed)
             {
                 S.GET<PluginForm>().HideOnClose = false;
                 S.GET<PluginForm>().Close();
