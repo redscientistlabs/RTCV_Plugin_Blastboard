@@ -207,7 +207,7 @@ namespace BLASTBOARD.UI
             }
             else
             {
-                LocalNetCoreRouter.Route(RTCV.NetCore.Endpoints.CorruptCore, RTCV.NetCore.Commands.Basic.ApplyBlastLayer, new object[] { sk.BlastLayer, true, true }, false);
+                LocalNetCoreRouter.Route(RTCV.NetCore.Endpoints.CorruptCore, RTCV.NetCore.Commands.Basic.ApplyBlastLayer, new object[] { sk.BlastLayer, false, false }, false);
             }
         }
 
