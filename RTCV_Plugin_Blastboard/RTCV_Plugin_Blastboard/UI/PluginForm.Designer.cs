@@ -42,24 +42,29 @@ namespace BLASTBOARD.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 37);
+            this.label1.Size = new System.Drawing.Size(120, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Blastboard";
             // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(378, 20);
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(364, 12);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(193, 25);
+            this.btnRefresh.Size = new System.Drawing.Size(207, 33);
             this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Tag = "color:dark2";
             this.btnRefresh.Text = "Load from Stockpile Manager";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // pnButtons
@@ -67,7 +72,7 @@ namespace BLASTBOARD.UI
             this.pnButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.pnButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnButtons.Controls.Add(this.btnOriginalSize);
             this.pnButtons.Location = new System.Drawing.Point(12, 58);
             this.pnButtons.Name = "pnButtons";
@@ -77,26 +82,36 @@ namespace BLASTBOARD.UI
             // 
             // btnOriginalSize
             // 
-            this.btnOriginalSize.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnOriginalSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOriginalSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnOriginalSize.FlatAppearance.BorderSize = 0;
+            this.btnOriginalSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOriginalSize.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.btnOriginalSize.ForeColor = System.Drawing.Color.White;
             this.btnOriginalSize.Location = new System.Drawing.Point(0, 0);
             this.btnOriginalSize.Name = "btnOriginalSize";
-            this.btnOriginalSize.Size = new System.Drawing.Size(210, 62);
+            this.btnOriginalSize.Size = new System.Drawing.Size(187, 43);
             this.btnOriginalSize.TabIndex = 9;
+            this.btnOriginalSize.Tag = "color:dark2";
             this.btnOriginalSize.Text = "Sample Text";
             this.btnOriginalSize.UseVisualStyleBackColor = false;
+            this.btnOriginalSize.Visible = false;
             this.btnOriginalSize.Click += new System.EventHandler(this.btnOriginalSize_Click);
             // 
             // btnRefreshPlayer
             // 
             this.btnRefreshPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefreshPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshPlayer.Location = new System.Drawing.Point(186, 20);
+            this.btnRefreshPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnRefreshPlayer.FlatAppearance.BorderSize = 0;
+            this.btnRefreshPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshPlayer.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnRefreshPlayer.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshPlayer.Location = new System.Drawing.Point(159, 12);
             this.btnRefreshPlayer.Name = "btnRefreshPlayer";
-            this.btnRefreshPlayer.Size = new System.Drawing.Size(186, 25);
+            this.btnRefreshPlayer.Size = new System.Drawing.Size(200, 33);
             this.btnRefreshPlayer.TabIndex = 9;
+            this.btnRefreshPlayer.Tag = "color:dark2";
             this.btnRefreshPlayer.Text = "Load from Stockpile Player";
-            this.btnRefreshPlayer.UseVisualStyleBackColor = true;
+            this.btnRefreshPlayer.UseVisualStyleBackColor = false;
             this.btnRefreshPlayer.Click += new System.EventHandler(this.btnRefreshPlayer_Click);
             // 
             // cbBlastToCorruptCloudLive
@@ -104,7 +119,7 @@ namespace BLASTBOARD.UI
             this.cbBlastToCorruptCloudLive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBlastToCorruptCloudLive.AutoSize = true;
             this.cbBlastToCorruptCloudLive.ForeColor = System.Drawing.Color.White;
-            this.cbBlastToCorruptCloudLive.Location = new System.Drawing.Point(581, 19);
+            this.cbBlastToCorruptCloudLive.Location = new System.Drawing.Point(582, 19);
             this.cbBlastToCorruptCloudLive.Name = "cbBlastToCorruptCloudLive";
             this.cbBlastToCorruptCloudLive.Size = new System.Drawing.Size(110, 30);
             this.cbBlastToCorruptCloudLive.TabIndex = 10;

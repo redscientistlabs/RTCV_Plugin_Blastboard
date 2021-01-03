@@ -20,8 +20,10 @@ namespace BLASTBOARD.UI
     using System.Runtime.InteropServices;
     using System.Drawing.Imaging;
     using RTCV.NetCore;
+    using RTCV.UI.Modular;
+    using System.Reflection;
 
-    public partial class PluginForm : Form
+    public partial class PluginForm : ComponentForm, IColorize
     {
         public BLASTBOARD plugin;
 
@@ -168,6 +170,7 @@ namespace BLASTBOARD.UI
 
         private void RefreshButtons()
         {
+
             pnButtons.Controls.Clear();
 
             int ColumnsPerRows = (pnButtons.Size.Width - (pnButtons.Size.Width % DefaultSize.Width)) / DefaultSize.Width;
@@ -177,12 +180,16 @@ namespace BLASTBOARD.UI
             {
                 var req = loadedStashKeys[i];
 
-                Button btn = new Button();
-                btn.BackColor = Color.Gainsboro;
+                Button btn = btnOriginalSize.Clone();
+
+                btn.FlatAppearance.BorderSize = 0;
+                btn.FlatAppearance.BorderColor = btn.BackColor;
+                //btn.BackColor = Color.Gainsboro;
                 btn.Size = DefaultSize;
                 btn.Text = req.Item1;
                 btn.Click += Btn_Click;
                 btn.Tag = req.Item2;
+                btn.Visible = true;
 
                 int column = (i % ColumnsPerRows);
                 int row = (i - column) / ColumnsPerRows;
@@ -233,6 +240,29 @@ namespace BLASTBOARD.UI
             }
 
             LoadFromStashKeys(sks);
+        }
+
+    }
+
+    public static class ControlExtensions
+    {
+        public static T Clone<T>(this T controlToClone)
+            where T : Control
+        {
+            PropertyInfo[] controlProperties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            T instance = Activator.CreateInstance<T>();
+
+            foreach (PropertyInfo propInfo in controlProperties)
+            {
+                if (propInfo.CanWrite)
+                {
+                    if (propInfo.Name != "WindowTarget")
+                        propInfo.SetValue(instance, propInfo.GetValue(controlToClone, null), null);
+                }
+            }
+
+            return instance;
         }
     }
 
