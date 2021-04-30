@@ -36,6 +36,7 @@ namespace BLASTBOARD.UI
             this.btnOriginalSize = new System.Windows.Forms.Button();
             this.btnRefreshPlayer = new System.Windows.Forms.Button();
             this.cbBlastToCorruptCloudLive = new System.Windows.Forms.CheckBox();
+            this.version = new System.Windows.Forms.Label();
             this.pnButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@ namespace BLASTBOARD.UI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Location = new System.Drawing.Point(5, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 32);
             this.label1.TabIndex = 1;
@@ -105,9 +106,9 @@ namespace BLASTBOARD.UI
             this.btnRefreshPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshPlayer.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnRefreshPlayer.ForeColor = System.Drawing.Color.White;
-            this.btnRefreshPlayer.Location = new System.Drawing.Point(159, 12);
+            this.btnRefreshPlayer.Location = new System.Drawing.Point(170, 12);
             this.btnRefreshPlayer.Name = "btnRefreshPlayer";
-            this.btnRefreshPlayer.Size = new System.Drawing.Size(200, 33);
+            this.btnRefreshPlayer.Size = new System.Drawing.Size(189, 33);
             this.btnRefreshPlayer.TabIndex = 9;
             this.btnRefreshPlayer.Tag = "color:dark2";
             this.btnRefreshPlayer.Text = "Load from Stockpile Player";
@@ -126,6 +127,17 @@ namespace BLASTBOARD.UI
             this.cbBlastToCorruptCloudLive.Text = "Blast to \nCorruptCloud Live";
             this.cbBlastToCorruptCloudLive.UseVisualStyleBackColor = true;
             // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.version.ForeColor = System.Drawing.Color.White;
+            this.version.Location = new System.Drawing.Point(120, 31);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(14, 13);
+            this.version.TabIndex = 11;
+            this.version.Text = "v";
+            // 
             // PluginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,8 +148,10 @@ namespace BLASTBOARD.UI
             this.Controls.Add(this.btnRefreshPlayer);
             this.Controls.Add(this.pnButtons);
             this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.version);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(64, 64);
             this.Name = "PluginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Tag = "color:dark1";
@@ -156,5 +170,6 @@ namespace BLASTBOARD.UI
         private System.Windows.Forms.Button btnOriginalSize;
         private System.Windows.Forms.Button btnRefreshPlayer;
         private System.Windows.Forms.CheckBox cbBlastToCorruptCloudLive;
+        private System.Windows.Forms.Label version;
     }
 }

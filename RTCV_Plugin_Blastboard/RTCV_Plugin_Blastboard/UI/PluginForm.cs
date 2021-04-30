@@ -42,7 +42,8 @@ namespace BLASTBOARD.UI
             this.FormClosing += new FormClosingEventHandler(this.PluginForm_FormClosing);
 
 
-            this.Text = BLASTBOARD.CamelCase(nameof(BLASTBOARD).Replace("_", " ")) + $" - Version {plugin.Version.ToString()}"; //automatic window title
+            this.Text = BLASTBOARD.CamelCase(nameof(BLASTBOARD).Replace("_", " "));
+            this.version.Text = $"{plugin.Version.ToString()}"; //automatic window title
 
             DefaultSize = btnOriginalSize.Size;
             btnOriginalSize.Visible = false;
@@ -190,6 +191,9 @@ namespace BLASTBOARD.UI
                 btn.Click += Btn_Click;
                 btn.Tag = req.Item2;
                 btn.Visible = true;
+
+                if (ColumnsPerRows == 0)
+                    ColumnsPerRows = 1;
 
                 int column = (i % ColumnsPerRows);
                 int row = (i - column) / ColumnsPerRows;
