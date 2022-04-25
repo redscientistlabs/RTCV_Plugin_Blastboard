@@ -32,7 +32,7 @@ namespace BLASTBOARD.UI
         Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         List<(string, StashKey)> loadedStashKeys = null;
-        Size DefaultSize;
+        new Size DefaultSize;
 
         public PluginForm(BLASTBOARD _plugin)
         {
