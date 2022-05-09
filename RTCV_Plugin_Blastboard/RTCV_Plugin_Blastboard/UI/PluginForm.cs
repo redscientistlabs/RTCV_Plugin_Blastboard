@@ -246,6 +246,20 @@ namespace BLASTBOARD.UI
             LoadFromStashKeys(sks);
         }
 
+        private void btnBroadcastManualBlast_Click(object sender, EventArgs e)
+        {
+            //call hotkey for blast to stash
+            UICore.CheckHotkey("Just Corrupt");
+
+            //select last item in stash
+            S.GET<StashHistoryForm>().DontLoadSelectedStash = true;
+            S.GET<StashHistoryForm>().lbStashHistory.SelectedIndex = S.GET<StashHistoryForm>().lbStashHistory.Items.Count - 1;
+
+            //get stashkey
+            var sk = (S.GET<StashHistoryForm>().lbStashHistory.SelectedItem as StashKey);
+
+            LocalNetCoreRouter.Route("CORRUPTCLOUD_LIVERTC", "SEND_TO_CORRUPTCLOUDLIVE", sk, false);
+        }
     }
 
     public static class ControlExtensions
