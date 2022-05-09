@@ -248,6 +248,13 @@ namespace BLASTBOARD.UI
 
         private void btnBroadcastManualBlast_Click(object sender, EventArgs e)
         {
+            var state = S.GET<SavestateManagerForm>().CurrentSaveStateStashKey;
+
+            if(state == null)
+            {
+                UICore.CheckHotkey("New Savestate");
+            }
+
             //call hotkey for blast to stash
             UICore.CheckHotkey("Just Corrupt");
 
